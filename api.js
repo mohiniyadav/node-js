@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 
@@ -19,6 +20,6 @@ app.post('/upload', upload.single('upload'), (req, res) => {
     res.send('Uploaded')
 })
 
-app.listen(3000, () => {
-    console.log('Server listening on 3000');
+app.listen(port, () => {
+    console.log(`Server listening on ${port}`);
 });
